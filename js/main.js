@@ -175,7 +175,7 @@ const galleryItems = [
 const faqs = [
   {
     q: 'How do I reserve a puppy?',
-    a: 'Text or call Layla at (860) 514-3315, or email clerzkennel@icloud.com. We welcome serious inquiries and will talk with you about your family, then arrange an in-person visit. We are selective about placements — each puppy is matched carefully with the right home.',
+    a: 'Text or call Anne at (860) 514-3315, or email clerzkennel@icloud.com. We welcome serious inquiries and will talk with you about your family, then arrange an in-person visit. We are selective about placements — each puppy is matched carefully with the right home.',
   },
   {
     q: 'Do you ship puppies?',
