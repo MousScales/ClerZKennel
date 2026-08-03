@@ -1379,7 +1379,15 @@ input, textarea, select { font-family: inherit; font-size: 0.95rem; }
 }
 
 @media (max-width: 768px) {
-  :root { --header-h: 68px; }
+  :root { --header-h: 56px; }
+
+  .header {
+    height: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+  }
+
+  .nav {
+    height: var(--header-h);
+  }
 
   .section { padding: 72px 0; }
   .section__header { margin-bottom: 44px; }
@@ -1407,14 +1415,22 @@ input, textarea, select { font-family: inherit; font-size: 0.95rem; }
     gap: 4px;
     max-height: calc(100svh - var(--header-h) - env(safe-area-inset-top, 0px));
     overflow-y: auto;
-    transform: translateY(-120%);
-    transition: transform 0.6s var(--ease-slow);
+    transform: translateY(calc(-100% - var(--header-h) - env(safe-area-inset-top, 0px)));
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.6s var(--ease-slow), opacity 0.4s var(--ease), visibility 0.6s;
     box-shadow: var(--shadow);
   }
 
-  .nav__menu--open { transform: translateY(0); }
+  .nav__menu--open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
   .nav__link { color: var(--espresso) !important; width: 100%; text-align: center; padding: 14px 16px; }
-  .nav__link--cta { display: none; }
 
   .hero__content {
     padding: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 28px) 20px 64px;
