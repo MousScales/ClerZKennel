@@ -4,11 +4,11 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const PUBLIC_DIR = path.join(__dirname, 'public');
+const ROOT_DIR = __dirname;
 const DATA_FILE = path.join(__dirname, 'data', 'inquiries.json');
 
 app.use(express.json());
-app.use(express.static(PUBLIC_DIR));
+app.use(express.static(ROOT_DIR));
 
 function readInquiries() {
   try {
@@ -52,8 +52,11 @@ app.get('/api/inquiries', (_req, res) => {
   res.json(readInquiries());
 });
 
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
+app.get('*', (req, res, next) => {
+  if (/\.(css|js|jpg|jpeg|png|gif|webp|ico|svg|woff2?)$/i.test(req.path)) {
+    return next();
+  }
+  res.sendFile(path.join(ROOT_DIR, 'index.html'));
 });
 
 app.listen(PORT, () => {
