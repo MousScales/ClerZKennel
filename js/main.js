@@ -160,18 +160,6 @@ const features = [
   },
 ];
 
-const galleryItems = [
-  { image: 'images/astro.jpg', caption: 'Astro' },
-  { image: 'images/sunny.jpg', caption: 'Sunny' },
-  { image: 'images/star.jpg', caption: 'Star' },
-  { image: 'images/star.jpg', caption: 'Quiet Moments' },
-  { image: 'images/astro.jpg', caption: 'Playtime' },
-  { image: 'images/sunny.jpg', caption: 'Afternoon Rest' },
-  { image: 'images/astro.jpg', caption: 'At Home' },
-  { image: 'images/star.jpg', caption: 'Cozy Blankets' },
-  { image: 'images/sunny.jpg', caption: 'Family Life' },
-];
-
 const faqs = [
   {
     q: 'How do I reserve a puppy?',
@@ -215,7 +203,6 @@ const puppiesGrid = document.getElementById('puppiesGrid');
 const parentsGrid = document.getElementById('parentsGrid');
 const homeGrid = document.getElementById('homeGrid');
 const featuresGrid = document.getElementById('featuresGrid');
-const galleryGrid = document.getElementById('galleryGrid');
 const faqList = document.getElementById('faqList');
 const puppyProfile = document.getElementById('puppyProfile');
 const profileBackdrop = document.getElementById('profileBackdrop');
@@ -299,15 +286,6 @@ function renderFeatures() {
       <h3>${f.title}</h3>
       <p>${f.desc}</p>
     </div>
-  `).join('');
-}
-
-function renderGallery() {
-  galleryGrid.innerHTML = galleryItems.map(g => `
-    <figure class="gallery__item">
-      <img src="${g.image}" alt="${g.caption}" loading="lazy" />
-      <figcaption class="gallery__item__cap">${g.caption}</figcaption>
-    </figure>
   `).join('');
 }
 
@@ -433,10 +411,19 @@ window.addEventListener('scroll', () => {
 navToggle.addEventListener('click', () => {
   const open = navMenu.classList.toggle('nav__menu--open');
   navToggle.setAttribute('aria-expanded', open);
+  if (!puppyProfile.classList.contains('profile--open')) {
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
 });
 
 document.querySelectorAll('.nav__link').forEach(link => {
-  link.addEventListener('click', () => navMenu.classList.remove('nav__menu--open'));
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('nav__menu--open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    if (!puppyProfile.classList.contains('profile--open')) {
+      document.body.style.overflow = '';
+    }
+  });
 });
 
 /* ===== Scroll Reveal ===== */
@@ -459,7 +446,6 @@ renderPuppies();
 renderParents();
 renderHome();
 renderFeatures();
-renderGallery();
 renderFAQ();
 observeReveals();
 
