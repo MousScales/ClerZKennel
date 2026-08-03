@@ -51,7 +51,10 @@ app.get('/api/inquiries', (_req, res) => {
   res.json(readInquiries());
 });
 
-app.get('*', (_req, res) => {
+app.get('*', (req, res, next) => {
+  if (/\.(css|js|jpg|jpeg|png|gif|webp|ico|svg|woff2?)$/i.test(req.path)) {
+    return next();
+  }
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
