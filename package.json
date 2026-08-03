@@ -4,10 +4,7 @@
   "description": "ClerZ Kennel — family-raised Toy Poodle puppies website",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.21.2"
+    "dev": "npx serve .",
+    "start": "npx serve ."
   }
 }
