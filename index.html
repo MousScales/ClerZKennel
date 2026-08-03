@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ClerZ Kennel — family-raised Toy Poodle and Toy Poodle/Shih Tzu mix puppies on Connecticut's East Shoreline." />
+  <title>ClerZ Kennel | Family-Raised Toy Poodle Puppies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-icon">🐾</span>
+        ClerZ Kennel
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#puppies" class="nav__link">Our Puppies</a></li>
+        <li><a href="#breed" class="nav__link">Breed Info</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <p class="hero__eyebrow">East Shoreline, Connecticut</p>
+      <h1 class="hero__title">Healthy, Happy Puppies<br />Raised with Love</h1>
+      <p class="hero__subtitle">
+        Family-operated Toy Poodle &amp; Toy Poodle/Shih Tzu mix puppies —
+        hypoallergenic companions raised in our home alongside their parents.
+      </p>
+      <div class="hero__actions">
+        <a href="#puppies" class="btn btn--primary">Meet Our Puppies</a>
+        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Who We Are</span>
+        <h2 class="section__title">A Loving Home,<br />Not a Kennel</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            <strong>ClerZ Kennel</strong> is a family-operated breeder on Connecticut's East Shoreline,
+            specializing in healthy, well-socialized Toy Poodle and Toy Poodle/Shih Tzu mix puppies.
+            Every puppy is raised inside our home alongside both parents, receiving daily attention,
+            early socialization, and a loving environment from birth.
+          </p>
+          <p>
+            We focus on producing small, hypoallergenic companion dogs with hair rather than fur —
+            a great choice for families looking for low-shedding pets. Our puppies begin basic house
+            training using pee pads, are accustomed to everyday household life, and are cared for as
+            true members of the family.
+          </p>
+        </div>
+        <div class="about__cards">
+          <div class="feature-card">
+            <div class="feature-card__icon">🏠</div>
+            <h3>Home-Raised</h3>
+            <p>Raised indoors with our family and both parents from day one.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">💉</div>
+            <h3>Health-Checked</h3>
+            <p>Vet exams, vaccinations, and deworming before going home.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">🤝</div>
+            <h3>Responsible Placement</h3>
+            <p>We match every puppy with a safe, loving family — no shipping alone.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">✨</div>
+            <h3>Hypoallergenic</h3>
+            <p>Low-shedding hair coats ideal for allergy-sensitive homes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Puppies -->
+  <section class="section puppies" id="puppies">
+    <div class="container">
+      <div class="section__header section__header--center">
+        <span class="section__eyebrow">Meet the Pack</span>
+        <h2 class="section__title">Our Puppies</h2>
+        <p class="section__desc">Each one raised with love, socialized early, and ready to become your family's best friend.</p>
+      </div>
+      <div class="puppies__grid" id="puppiesGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Puppy Modal -->
+  <div class="modal" id="puppyModal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__dialog" role="dialog" aria-labelledby="modalTitle">
+      <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Breed Info -->
+  <section class="section breed" id="breed">
+    <div class="container">
+      <div class="breed__layout">
+        <div class="section__header">
+          <span class="section__eyebrow">The Breed</span>
+          <h2 class="section__title">Toy Poodle &amp; Mix</h2>
+          <p class="section__desc">Intelligent, affectionate, and perfectly sized for family life.</p>
+        </div>
+        <div class="breed__details">
+          <div class="breed__item">
+            <span class="breed__label">Mother</span>
+            <span class="breed__value">AKC Certified Full Toy Poodle</span>
+          </div>
+          <div class="breed__item">
+            <span class="breed__label">Father</span>
+            <span class="breed__value">Toy Poodle mix (~25% Shih Tzu)</span>
+          </div>
+          <div class="breed__item">
+            <span class="breed__label">Coat</span>
+            <span class="breed__value">Hypoallergenic, low-shedding hair</span>
+          </div>
+          <div class="breed__item">
+            <span class="breed__label">Temperament</span>
+            <span class="breed__value">Friendly, affectionate, playful &amp; family-oriented</span>
+          </div>
+        </div>
+      </div>
+      <div class="health-checklist">
+        <h3 class="health-checklist__title">Before Going Home, Every Puppy Receives:</h3>
+        <ul class="health-checklist__list">
+          <li>Veterinary wellness examination</li>
+          <li>Age-appropriate vaccinations</li>
+          <li>Deworming treatment</li>
+          <li>Early socialization with people &amp; other dogs</li>
+          <li>Basic pee-pad house training</li>
+          <li>Accustomed to everyday household life</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section__header section__header--center">
+        <span class="section__eyebrow">What We Offer</span>
+        <h2 class="section__title">Our Services</h2>
+      </div>
+      <div class="services__grid" id="servicesGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section mission">
+    <div class="container">
+      <blockquote class="mission__quote">
+        <p>
+          "We are committed to raising healthy, happy, and well-adjusted puppies in a loving home
+          environment — ensuring each one is placed with a responsible family where they can thrive
+          for years to come."
+        </p>
+        <footer>— ClerZ Kennel Mission</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="section location" id="location">
+    <div class="container">
+      <div class="location__grid">
+        <div class="location__info">
+          <span class="section__eyebrow">Find Us</span>
+          <h2 class="section__title">East Shoreline,<br />Connecticut</h2>
+          <p>
+            Conveniently located for families throughout Connecticut, Rhode Island,
+            Massachusetts, New York, and New Hampshire. We offer <strong>in-person pickup only</strong>
+            — we love meeting every new puppy parent face to face.
+          </p>
+          <div class="location__states">
+            <span class="state-tag">CT</span>
+            <span class="state-tag">RI</span>
+            <span class="state-tag">MA</span>
+            <span class="state-tag">NY</span>
+            <span class="state-tag">NH</span>
+          </div>
+        </div>
+        <div class="location__map">
+          <div class="map-placeholder">
+            <div class="map-placeholder__pin">📍</div>
+            <p>East Shoreline<br />Connecticut</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__layout">
+        <div class="contact__info">
+          <span class="section__eyebrow">Get in Touch</span>
+          <h2 class="section__title">Interested in a Puppy?</h2>
+          <p>
+            We'd love to hear from you! Fill out the form and we'll get back to you
+            about availability, pricing, and scheduling an in-person visit.
+          </p>
+          <ul class="contact__notes">
+            <li>✓ In-person meetings only — we do not ship puppies alone</li>
+            <li>✓ Guidance for new puppy owners included</li>
+            <li>✓ Every puppy carefully matched to the right family</li>
+          </ul>
+        </div>
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" />
+          </div>
+          <div class="form-group">
+            <label for="puppy">Puppy of Interest</label>
+            <select id="puppy" name="puppy">
+              <option value="">Any available puppy</option>
+              <option value="Astro">Astro</option>
+              <option value="Sunny">Sunny</option>
+              <option value="Star">Star</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your family and what you're looking for..." required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+            Send Inquiry
+          </button>
+          <div class="form-success" id="formSuccess" hidden>
+            Thank you! Your inquiry has been received. We'll be in touch soon.
+          </div>
+          <div class="form-error-msg" id="formError" hidden>
+            Something went wrong. Please try again or call us directly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">🐾 ClerZ Kennel</span>
+        <p>Family-raised Toy Poodle puppies on Connecticut's East Shoreline.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#about">About</a>
+        <a href="#puppies">Puppies</a>
+        <a href="#breed">Breed Info</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer__copy">&copy; <span id="year"></span> ClerZ Kennel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

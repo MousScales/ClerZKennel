@@ -1,0 +1,13 @@
+{
+  "name": "clerz-kennel",
+  "version": "1.0.0",
+  "description": "ClerZ Kennel — family-raised Toy Poodle puppies website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
